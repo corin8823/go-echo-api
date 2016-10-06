@@ -11,6 +11,7 @@ import (
 func main() {
 	e := echo.New()
 
+	e.SetDebug(true)
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
