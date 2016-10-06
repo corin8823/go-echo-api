@@ -12,5 +12,5 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello World!")
 	})
-	e.Run(standard.New(":0808"))
+	e.Run(standard.New(":8080"))
 }
