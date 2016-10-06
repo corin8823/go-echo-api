@@ -1,8 +1,10 @@
-hash: aa87b1b7bf4646b205092e3737364f6c4a9b57ec02c0e2f32aa65599768975fc
-updated: 2016-10-06T14:11:33.619156469+09:00
+hash: 892556d768d212d09491f4d728c9009bfc935bc0377feb710173c0dc67d2c56d
+updated: 2016-10-06T18:06:05.664246+09:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 24c63f56522a87ec5339cc3567883f1039378fdb
+- name: github.com/go-xorm/xorm
+  version: 838b2268ae0847e6cfab5c0359c496983223e9dd
 - name: github.com/labstack/echo
   version: 04e6901d05b58ddbae579a6252a3d1bb3f334adc
   subpackages:

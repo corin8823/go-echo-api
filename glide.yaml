@@ -2,3 +2,5 @@ package: github.com/corin8823/go-echo-api
 import:
 - package: github.com/labstack/echo
   version: ^2.1.0
+- package: github.com/go-xorm/xorm
+  version: ^0.5.6
