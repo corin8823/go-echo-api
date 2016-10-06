@@ -1,6 +1,10 @@
-hash: 892556d768d212d09491f4d728c9009bfc935bc0377feb710173c0dc67d2c56d
-updated: 2016-10-06T18:06:05.664246+09:00
+hash: 57e9eab91d0b8fd350d388d3ab4ddae5046dafee6b6f16a206991ea660d71712
+updated: 2016-10-06T18:19:36.834863806+09:00
 imports:
+- name: bitbucket.org/liamstask/goose
+  version: 8488cc47d90c8a502b1c41a462a6d9cc8ee0a895
+  subpackages:
+  - cmd/goose
 - name: github.com/dgrijalva/jwt-go
   version: 24c63f56522a87ec5339cc3567883f1039378fdb
 - name: github.com/go-xorm/xorm
