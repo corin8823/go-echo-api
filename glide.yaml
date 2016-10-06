@@ -1,0 +1,4 @@
+package: github.com/corin8823/go-echo-api
+import:
+- package: github.com/labstack/echo
+  version: ^2.1.0
