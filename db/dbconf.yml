@@ -1,0 +1,15 @@
+test:
+    driver: mymysql
+    open: go_echo_api/root/
+
+development:
+    driver: mymysql
+    open: go_echo_api/root/
+
+production:
+    driver: mymysql
+    open: go_echo_api/root/
+
+environment_variable_config:
+    driver: $DB_DRIVER
+    open: $DATABASE_URL
