@@ -45,10 +45,10 @@ func GetUser(c echo.Context) error {
 }
 
 // GetUsers is Get user list
-func GetUsers() []User {
+func GetUsers(c echo.Context) error {
 	users := []User{}
 	engine.Find(&users)
-	return users
+	return c.JSON(http.StatusOK, users)
 }
 
 // CreateUser is insert User

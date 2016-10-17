@@ -19,12 +19,7 @@ func main() {
 		return c.String(http.StatusOK, "Hello World!")
 	})
 	e.GET("/users/:userID", GetUser)
-
-	e.GET("/users", func(c echo.Context) error {
-		users := GetUsers()
-		return c.JSON(http.StatusOK, users)
-	})
-
+	e.GET("/users", GetUsers)
 	e.POST("/users", CreateUser)
 	e.DELETE("/users/:userID", DeleteUser)
 	e.Run(standard.New(":8080"))
