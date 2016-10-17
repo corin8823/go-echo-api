@@ -55,3 +55,17 @@ func GetUsers() []User {
 	engine.Find(&users)
 	return users
 }
+
+// CreateUser is insert User
+func CreateUser(c echo.Context) error {
+	name := c.FormValue("name")
+	if name == "" {
+		return c.JSON(http.StatusBadRequest, "name is nil")
+	}
+	user := User{Name: name}
+	_, err := engine.Insert(&user)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+	return c.JSON(http.StatusCreated, name)
+}

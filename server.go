@@ -24,6 +24,7 @@ func main() {
 		return c.JSON(http.StatusOK, users)
 	})
 
+	e.POST("/users", CreateUser)
 	e.GET("/users/:userID", GetUser)
 	e.Run(standard.New(":8080"))
 }
