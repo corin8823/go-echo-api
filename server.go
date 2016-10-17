@@ -3,8 +3,6 @@ package main
 import (
 	"net/http"
 
-	"strconv"
-
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"
 	"github.com/labstack/echo/middleware"
@@ -21,10 +19,11 @@ func main() {
 		return c.String(http.StatusOK, "Hello World!")
 	})
 
-	e.GET("/users/:userID", func(c echo.Context) error {
-		userID, _ := strconv.Atoi(c.Param("userID"))
-		user := FindUserByID(userID)
-		return c.String(http.StatusOK, "Hello World "+user.Name)
+	e.GET("/users", func(c echo.Context) error {
+		users := GetUsers()
+		return c.JSON(http.StatusOK, users)
 	})
+
+	e.GET("/users/:userID", GetUser)
 	e.Run(standard.New(":8080"))
 }
