@@ -52,6 +52,6 @@ func GetUser(c echo.Context) error {
 // GetUsers is Get user list
 func GetUsers() []User {
 	users := []User{}
-	engine.Get(&users)
+	engine.Find(&users)
 	return users
 }
