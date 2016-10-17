@@ -30,16 +30,11 @@ func init() {
 	}
 }
 
-// NewUser is create User Dao
-func NewUser(id int, name string) User {
-	return User{ID: id, Name: name}
-}
-
 // GetUser is return user response
 func GetUser(c echo.Context) error {
 	userID, err := strconv.Atoi(c.Param("userID"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, err)
+		return c.JSON(http.StatusNotFound, err)
 	}
 	user := User{ID: userID}
 	has, err := engine.Get(&user)
@@ -68,4 +63,18 @@ func CreateUser(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, err)
 	}
 	return c.JSON(http.StatusCreated, name)
+}
+
+// DeleteUser is User delete
+func DeleteUser(c echo.Context) error {
+	userID, err := strconv.Atoi(c.Param("userID"))
+	if err != nil {
+		return c.JSON(http.StatusNotFound, err)
+	}
+	user := User{ID: userID}
+	_, deleteErr := engine.Delete(&user)
+	if deleteErr != nil {
+		return c.JSON(http.StatusNotFound, err)
+	}
+	return c.NoContent(http.StatusNoContent)
 }
